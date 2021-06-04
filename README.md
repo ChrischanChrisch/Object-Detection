@@ -73,7 +73,7 @@ Jetzt können wir ein Terminal öffene cmd oder anaconda-prompt und folgende Bef
 
 - pip install tensorflow==2.4.1
 
-- cd C:/Tensorflow2models/research/
+- cd C:/Tensorflow/2models/research/
 
 - python -m pip install
 
@@ -128,4 +128,21 @@ Ansonsten immer mit "Run" durch das Notebook klicken.
 viel Spaß
 
 # Bilder Labeln
+Download die neueste Version von https://tzutalin.github.io/labelImg/
+
+Entpacken alles nach z.B: C:\Tensorflow\Labeling
+
+In dem Ordner oder Unterordner die Anwendung Labelimg.exe ausführen.
+Mit Open dir zum  Ordner  "C:\Tensorflow2\workspace\training_demo\images" navigieren.
+
+![image](https://user-images.githubusercontent.com/84871742/120816030-ac145000-c550-11eb-8cdb-24e121409835.png)
+
+
+Tipp: Im Ordner  "C:\Tensorflow\Labeling"  ist irgendwo eine Datei "predefined_classes.txt" zu finden, die kann man gut an seine Klassen anpassen. 
+
+Nun nur Bild für Bild durchklicken und mit "create RectBox"  ![image](https://user-images.githubusercontent.com/84871742/120815690-5b045c00-c550-11eb-8276-af7702ca5ab8.png)
+
+ein Recteck um jedes Object zeichnen und die ObjectKlasse aussuchen.
+
+
 
