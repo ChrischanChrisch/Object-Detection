@@ -107,6 +107,10 @@ Object Detection Tensorflow2 in jupyter notebook.
 
 Die ganze Ordnerstruktur clonen und unter Tensorflow ablegen. ggf. den root Ordner Object-Detection umbenennen in "workspace".
 
+Der Tensorflow2 Ordner sollte nun wie folgt aussehen:
+![image](https://user-images.githubusercontent.com/84871742/120813189-f516d500-c54d-11eb-8487-50f1719ff142.png)
+
+
 Das Jupyter Notebook  Object_Detection.ipynb   öffnen, am besten mit dem Anaconda Prompt:
 
 - cd C:\Tensorflow2\workspace\training_demo
