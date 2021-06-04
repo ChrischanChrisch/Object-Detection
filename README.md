@@ -1,9 +1,14 @@
 # Object-Detection
-Object Detection Tensorflow2 in jupyter notebook
+Object Detection Tensorflow2 in jupyter notebook.
+
 Die ganze Ordnerstruktur clonen und unter Tensorflow ablegen. ggf. den root Ordnr Object-Detection umbenennen in "workspace".
+
 Das Jupyter Notebook  Object_Detection.ipynb   öffnen, am besten mit dem Anaconda Prompt:
+
 cd C:\Tensorflow2\workspace\training_demo
+
 jupyter notebook
+
 
 Bilder mit Label Daten unter Trainings_demo/Images  ablegen und loslegen. Achtet auf die Beschreibungen im Notebook, ggf. müssen Pfade angepasst werden.
 Ebenso müssen die Labels angepasst werden in Schritt 2  Zeile 1.
