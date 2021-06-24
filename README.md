@@ -51,6 +51,10 @@ Es sollte der Eintrag zu finden sein:
 
 ![image](https://user-images.githubusercontent.com/84871742/120811826-b46a8c00-c54c-11eb-9b88-338ecf18a53a.png)
 
+Weitere Umgebungsvariablen die fehlen könnten, sind eventuele später nachzutragen:
+- C:/Tensorflow2/models/research/
+- C:/Tensorflow2/models/research/slim
+- C:/Tensorflow2/models/research/object_detection
 
 Jetzt können wir ein Terminal öffene cmd oder anaconda-prompt und folgende Befehle ausführen:
 
@@ -75,7 +79,7 @@ Jetzt können wir ein Terminal öffene cmd oder anaconda-prompt und folgende Bef
 
 - cd C:/Tensorflow/2models/research/
 
-- python -m pip install
+- python -m pip install .
 
 
 3.c pycocotolls installieren
