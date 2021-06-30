@@ -108,7 +108,7 @@ Einfach den Befehl in cmd oder anaconda-prompt ausführen:
 
 - python -m ipykernel install --user --name=tf2_env
 
-# Object-Detection
+# 4. Object-Detection
 Object Detection Tensorflow2 in jupyter notebook.
 
 Die ganze Ordnerstruktur clonen und unter Tensorflow ablegen. ggf. den root Ordner Object-Detection umbenennen in "workspace".
@@ -123,7 +123,7 @@ Das Jupyter Notebook  Object_Detection.ipynb   öffnen, am besten mit dem Anacon
 
 - jupyter notebook
 
-Unter dem Menu "Kernel" sollte auch unsere Enviroment "tf2_env" zu finden sein. 
+Unter dem Menu "Kernel" sollte auch unsere Enviroment "tf2_env", oder wie auch immer eure Enviroment heißt, zu finden sein. 
 
 Bilder mit Label Daten unter Trainings_demo/Images  ablegen und loslegen (Wie Bilder gelabelt werden können ist im nächsten Kaptile kurz beschrieben). Achtet auf die Beschreibungen im Notebook, ggf. müssen Pfade angepasst werden.
 Ebenso müssen die Labels angepasst werden in Schritt 2  Zeile 1.
@@ -133,7 +133,7 @@ Für Schritt 5  muss ein pretrained model runter geladen werden. Dann den entspr
 Ansonsten immer mit "Run" durch das Notebook klicken.
 viel Spaß
 
-# Bilder Labeln
+# 5. Bilder Labeln
 Download die neueste Version von https://tzutalin.github.io/labelImg/
 
 Entpacken alles nach z.B: C:\Tensorflow\Labeling
