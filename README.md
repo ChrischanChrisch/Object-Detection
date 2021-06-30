@@ -1,3 +1,5 @@
+# !!! Achtung nach Fehler enthalten!!!
+# Good site to follow for setup: https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/
 # PC Einrichten
 # 1. Anaconda installieren
 
@@ -77,7 +79,7 @@ Jetzt können wir ein Terminal öffene cmd oder anaconda-prompt und folgende Bef
 
 - pip install tensorflow==2.4.1
 
-- cd C:/Tensorflow/2models/research/
+- cd C:/Tensorflow2/models-master/research/
 
 - python -m pip install .
 
