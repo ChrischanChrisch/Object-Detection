@@ -1,4 +1,4 @@
-# !!! Achtung nach Fehler enthalten!!!
+# !!! Achtung noch Fehler enthalten!!!
 # Good site to follow for setup: https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/
 # PC Einrichten
 # 1. Anaconda installieren
