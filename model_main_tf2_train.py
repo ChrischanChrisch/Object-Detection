@@ -1,0 +1,96 @@
+# Lint as: python3
+# Copyright 2020 The TensorFlow Authors. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ==============================================================================
+
+r"""Creates and runs TF2 object detection models.
+
+For local training/evaluation run:
+PIPELINE_CONFIG_PATH=path/to/pipeline.config
+MODEL_DIR=/tmp/model_outputs
+NUM_TRAIN_STEPS=10000
+SAMPLE_1_OF_N_EVAL_EXAMPLES=1
+python model_main_tf2.py -- \
+  --model_dir=$MODEL_DIR --num_train_steps=$NUM_TRAIN_STEPS \
+  --sample_1_of_n_eval_examples=$SAMPLE_1_OF_N_EVAL_EXAMPLES \
+  --pipeline_config_path=$PIPELINE_CONFIG_PATH \
+  --alsologtostderr
+"""
+from absl import flags
+import tensorflow.compat.v2 as tf
+from object_detection import model_lib_v2
+
+import os
+import tensorflow.compat.v2 as tf
+from object_detection import model_lib_v2
+import time
+
+Path_to_scripts = r'C:\Tensorflow2\workspace\Training_demo'
+model_dir = os.path.join(Path_to_scripts, 'models\my_model')
+pipeline_config_path = os.path.join(model_dir, 'pipeline.config')
+num_train_steps = None
+eval_on_train_data = False
+sample_1_of_n_eval_examples = None
+sample_1_of_n_eval_on_train_examples = 5
+checkpoint_dir = None
+eval_timeout = 3600
+use_tpu = False
+num_train_steps = 5000
+num_workers = 1
+checkpoint_every_n = 1000
+record_summaries = True
+
+def main(_):
+
+  if checkpoint_dir:
+    model_lib_v2.eval_continuously(
+        pipeline_config_path=pipeline_config_path,
+        model_dir=model_dir,
+        train_steps=num_train_steps,
+        sample_1_of_n_eval_examples=sample_1_of_n_eval_examples,
+        sample_1_of_n_eval_on_train_examples=(
+            sample_1_of_n_eval_on_train_examples),
+        checkpoint_dir=checkpoint_dir,
+        wait_interval=300, timeout=eval_timeout)
+  else:
+    if use_tpu:
+      # TPU is automatically inferred if tpu_name is None and
+      # we are running under cloud ai-platform.
+      resolver = tf.distribute.cluster_resolver.TPUClusterResolver(
+          tpu_name)
+      tf.config.experimental_connect_to_cluster(resolver)
+      tf.tpu.experimental.initialize_tpu_system(resolver)
+      strategy = tf.distribute.experimental.TPUStrategy(resolver)
+    elif num_workers > 1:
+      strategy = tf.distribute.experimental.MultiWorkerMirroredStrategy()
+    else:
+      strategy = tf.compat.v2.distribute.MirroredStrategy()
+
+    with strategy.scope():
+      model_lib_v2.train_loop(
+          pipeline_config_path=pipeline_config_path,
+          model_dir=model_dir,
+          train_steps=num_train_steps,
+          use_tpu=use_tpu,
+          checkpoint_every_n=checkpoint_every_n,
+          record_summaries=record_summaries)
+
+if __name__ == '__main__':
+    start_time = time.perf_counter()
+    #main()
+    tf.compat.v1.app.run()
+    end_time = time.perf_counter() - start_time
+    print('Training abgeschlossen: Dauer = ', end_time)
+  #tf.compat.v1.app.run()
+
