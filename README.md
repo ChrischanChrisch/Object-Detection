@@ -78,14 +78,13 @@ Jetzt können wir ein Terminal öffene cmd oder anaconda-prompt und folgende Bef
 
 - activate tf2_env
 
-- pip install tensorflow==2.4.1
+-cd C:/Tensorflow2/workspace
 
-- cd C:/Tensorflow2/models-master/research/
-
-- python -m pip install .
+- pip install -r reqiurements_tf2.txt
 
 
-3.c pycocotolls installieren
+3.c pycocotolls installieren  
+(eigentlich nicht nötig sollte mit dem vorherigen Schritt bereits installiert sein. Also erst machen, wenn es beim Testen nicht funktioniert))
 
 Diese werden zum ausführlichen Aufnehmen von Evaluierungsdaten benötigt.
 Dazu clone das offizele Reprository von https://github.com/cocodataset/cocoapi,  und Entpacke es z.B. nach C:/Tensorflow2/Cocoapi-master
@@ -103,7 +102,7 @@ Dann können folgende Befehle in cmd oder anaconda-prompt ausgeführt werden.
 
 - python setup.py build_ext --inplace
 
-2.d Hinzufügen unserer Einviroment zum juypter notebook.
+3.d Hinzufügen unserer Einviroment zum juypter notebook.
 
 Einfach den Befehl in cmd oder anaconda-prompt ausführen:
 
@@ -130,6 +129,10 @@ Bilder mit Label Daten unter Trainings_demo/Images  ablegen und loslegen (Wie Bi
 Ebenso müssen die Labels angepasst werden in Schritt 2  Zeile 1.
 In Schritt 4     müssen im vierten Unterschritt die config Daten überpfüt und ggf. angepasst werden. Aufjeden Fall muss pipeline_config.model.faster_rcnn.num_classes = xx  indivudell auf die  Anzahl der eigenen Object-Klassen angepasst werden. 
 Für Schritt 5  muss ein pretrained model runter geladen werden. Dann den entsprechenden Namen in Zeile 3 angeben.
+Wenn Schritt 5 und/oder 6 mit einer Fehlermeldung abbricht, dann können auch die scripte "model_main_tf2_train.py" und "model_main_tf2_eval" in PyCharm ausgeführt werden.
+Manchmal gibt es Probleme mit tf_slim im jupyter notebook.
+
+Dazu PyCharm installieren:  https://www.jetbrains.com/pycharm/  und hier mit der angelegten Enviromant die Scripte ausführen.
 
 Ansonsten immer mit "Run" durch das Notebook klicken.
 viel Spaß
